@@ -10,6 +10,12 @@ jQuery(document).ready(function($) {
       $('#header').removeClass('header-fixed');
     }
   });
+
+  if ($(this).scrollTop() > 100) {
+    $('.back-to-top').fadeIn('slow');
+    $('#header').addClass('header-fixed');
+  }
+
   $('.back-to-top').click(function() {
     $('html, body').animate({
       scrollTop: 0
@@ -17,8 +23,8 @@ jQuery(document).ready(function($) {
     return false;
   });
 
-  // Initiate the AOS animation library
-  AOS.init();
+  // Initiate the wowjs animation library
+  new WOW().init();
 
   // Initiate superfish on nav menu
   $('.nav-menu').superfish({
